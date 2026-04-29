@@ -92,5 +92,21 @@ PORT=5000
 MONGO_URI=mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/itemmanager?retryWrites=true&w=majority
 ```
 
+## Deployment Notes
+
+To deploy this project to production, you can use the following platforms:
+
+### 1. Database: MongoDB Atlas
+- Create a free cluster on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+- Get the connection string and configure the backend `MONGO_URI` environment variable.
+
+### 2. Backend: Render or Heroku
+- Deploy the `backend/` folder to a platform like [Render](https://render.com) or [Heroku](https://heroku.com) as a Node.js Web Service.
+- Set the `PORT` and `MONGO_URI` environment variables in the platform's dashboard.
+
+### 3. Frontend: Vercel or Netlify
+- Update the `VITE_API_URL` environment variable (or hardcoded API base URL in `src/api/itemApi.js`) to point to the deployed backend URL.
+- Deploy the `frontend/` folder to [Vercel](https://vercel.com) or [Netlify](https://www.netlify.com). The build command is `npm run build` and the output directory is `dist/`.
+
 ## License
 MIT
